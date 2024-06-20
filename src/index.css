@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  @apply text-black;
+  @apply font-Darkmode;
+}
+
+@layer base {
+  /* Light */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-Light.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  /* Regular */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-Regular.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Medium */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-Medium.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Bold */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-Bold.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* Extra Bold */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-XBold.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-XBold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  /* Black */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-Black.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  /* Thin */
+  @font-face {
+    font-family: "Darkmode";
+    src: url("./assets/fonts/Darkmode-Thin.woff2") format("woff2"),
+      url("./assets/fonts/Darkmode-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+  }
+}

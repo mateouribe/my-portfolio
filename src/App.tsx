@@ -1,12 +1,16 @@
-import Wrapper from "./components/wrapper";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Home from "./screens/home";
+import Navbar from "./components/global/navbar";
 
 function App() {
+  const location = useLocation();
   return (
-    <section>
-      <Wrapper>
-        <h1>Hola</h1>
-      </Wrapper>
-    </section>
+    <>
+      <Navbar />
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
