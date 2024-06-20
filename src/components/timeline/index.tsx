@@ -5,7 +5,6 @@ import { colors } from "../../utils/constants";
 import Item from "./item";
 import TimelineSection from "./timelineSection";
 import TimelineSectionMobile from "./timelineSection/timelineSectionMobile";
-import pruebaBlack from "../../assets/images/pruebaBlack.png";
 import onlineLearing from "../../assets/images/online-learning.png";
 import systemTechnician from "../../assets/images/system-technician.png";
 import computerProgramming from "../../assets/images/computer-programming.png";
@@ -282,15 +281,7 @@ const Timeline = () => {
           />
         </TimelineSection>
 
-        <section className="w-auto">
-          <div className="w-[100vw] bg-black h-view relative">
-            <img
-              src={pruebaBlack}
-              alt="pruebaBlack"
-              className="absolute bottom-0 w-[60%] transform -translate-x-1/2 left-1/2"
-            />
-          </div>
-        </section>
+        <div className="w-[100vw] h-view bg-white"></div>
       </div>
 
       {/* Mobile */}

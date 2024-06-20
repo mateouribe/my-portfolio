@@ -4,6 +4,7 @@ import Button from "../../components/customElements/button";
 import Timeline from "../../components/timeline";
 import Skills from "../../components/skills";
 import hero1 from "../../assets/images/hero1.mp4";
+import Contact from "../../components/contact";
 
 const Home = () => {
   return (
@@ -54,7 +55,7 @@ const Home = () => {
           <div className="w-[calc(100%-20px)] h-full absolute -bottom-[4%] left-1/2 transform -translate-x-1/2 rounded-12 z-[99] overflow-hidden shadow-sm">
             <video
               className="object-cover w-full h-full"
-              autoPlay={false}
+              autoPlay
               loop
               muted
               src={hero1}
@@ -123,7 +124,7 @@ const Home = () => {
       </section>
       <Skills />
       <Timeline />
-      {/* <section className="w-full h-[200vh] bg-white"></section> */}
+      <Contact />
     </>
   );
 };
