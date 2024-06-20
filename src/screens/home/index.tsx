@@ -55,7 +55,7 @@ const Home = () => {
           <div className="w-[calc(100%-20px)] h-full absolute -bottom-[4%] left-1/2 transform -translate-x-1/2 rounded-12 z-[99] overflow-hidden shadow-sm">
             <video
               className="object-cover w-full h-full"
-              autoPlay
+              autoPlay={false}
               loop
               muted
               src={hero1}

@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { Dock, DockIcon } from "./dock/dock";
 import contactImage from "../../assets/images/contact-image.png";
 import contactImage2 from "../../assets/images/contact-image2.png";
 import useIsDesktop from "../../utils/useIsDesktop";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Contact = () => {
+  const container = useRef<HTMLDivElement>(null);
+
   const isDesktop = useIsDesktop();
   const Icons = {
     gitHub: (props: IconProps) => (
@@ -124,8 +130,47 @@ const Contact = () => {
     ),
   };
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const images = gsap.utils.toArray(".contact-image");
+
+      images.forEach((el) => {
+        const element = el as HTMLElement;
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 75%",
+          },
+        });
+
+        tl.fromTo(
+          element,
+          {
+            scale: 0.9,
+            opacity: 0,
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: "back.out(2)",
+          }
+        );
+      });
+    }, [container.current]);
+
+    return () => {
+      ctx.revert();
+      ScrollTrigger.refresh();
+    };
+  }, []);
+
   return (
-    <section className="flex flex-col w-full bg-white gap-50 lg:gap-20 lg:flex-row p-mobile py-tablet">
+    <section
+      className="flex flex-col w-full bg-white gap-50 lg:gap-20 lg:flex-row p-mobile py-tablet"
+      ref={container}
+    >
       <div className="w-full lg:w-[70%] min-h-[50vh] bg-[#F5F5F5] shadow-sm rounded-30 flex flex-col px-50 justify-center items-start relative overflow-hidden">
         <h3 className="mb-20 font-semibold leading-tight tracking-tight text-center lg:text-left text-32 lg:text-37">
           Connect with me using {isDesktop && <br />}
@@ -153,7 +198,7 @@ const Contact = () => {
           </DockIcon>
         </Dock>
         <img
-          className="absolute bottom-[0%] lg:-bottom-[15%] left-[10%] w-[70%] lg:w-[50%] pointer-events-none z-[1]"
+          className="absolute bottom-[0%] lg:-bottom-[15%] left-[10%] w-[70%] lg:w-[50%] pointer-events-none z-[1] contact-image"
           src={contactImage2}
         />
       </div>
@@ -163,7 +208,7 @@ const Contact = () => {
           Open to Work
         </h4>
         <img
-          className="absolute -top-[10%] -right-[3%] w-[80%] lg:w-full pointer-events-none"
+          className="absolute -top-[10%] -right-[3%] w-[80%] lg:w-full pointer-events-none contact-image"
           src={contactImage}
         />
       </div>

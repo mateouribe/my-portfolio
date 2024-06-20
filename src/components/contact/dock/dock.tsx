@@ -56,6 +56,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         className={`${cn(dockVariants({ className }), className)} bg-white/10`}
         style={{
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          // boxShadow: " 7px 7px 10px #dedede, -7px -7px 10px #e2e2e2",
           backdropFilter: "blur(13.5px)",
         }}
       >
@@ -117,7 +118,7 @@ const DockIcon = ({
           backdropFilter: "blur(13.5px)",
         }}
         className={cn(
-          "flex aspect-square items-center justify-center rounded-full bg-black/10",
+          "flex aspect-square items-center justify-center rounded-full bg-black/10 relative z-[3]",
           className
         )}
         {...props}

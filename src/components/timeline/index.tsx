@@ -101,6 +101,7 @@ const Timeline = () => {
     };
   }, []);
 
+  // Mobile animation
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
 
