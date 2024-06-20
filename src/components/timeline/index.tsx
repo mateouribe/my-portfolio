@@ -118,7 +118,6 @@ const Timeline = () => {
               trigger: element,
               start: "top 50%",
               end: "bottom 50%",
-              markers: true,
               toggleActions: "play reverse play reverse",
             },
           });
