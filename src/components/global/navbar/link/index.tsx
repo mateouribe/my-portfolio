@@ -4,6 +4,8 @@ import { navigateToPage } from "../../../../utils/navigateToPage";
 import Home from "../icons/home";
 import Contact from "../icons/contact";
 import Timeline from "../icons/timeline";
+import { useStatesContext } from "../../../../context/StatesProvider";
+import { colors } from "../../../../utils/constants";
 
 type Props = {
   children: React.ReactNode;
@@ -13,22 +15,24 @@ type Props = {
 };
 
 const Link = ({ children, onClick, route, icon }: Props) => {
+  const { isDarkMode } = useStatesContext();
+
   const navigate = useNavigate();
 
   return (
     <li
-      className="flex items-center gap-1 tracking-tight cursor-pointer text-14"
+      className="flex items-center gap-1 tracking-tight text-black cursor-pointer text-14 text-color-will-change"
       onClick={() => {
         onClick && onClick();
         navigateToPage(navigate, route);
       }}
     >
       {icon === "home" ? (
-        <Home />
+        <Home fill={isDarkMode ? colors.white : colors.black} />
       ) : icon === "contact" ? (
-        <Contact />
+        <Contact fill={isDarkMode ? colors.white : colors.black} />
       ) : icon === "timeline" ? (
-        <Timeline />
+        <Timeline fill={isDarkMode ? colors.white : colors.black} />
       ) : null}
       {children}
     </li>

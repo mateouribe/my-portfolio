@@ -1,6 +1,8 @@
 import React from "react";
 import TimelineTitle from "../../timelineTitle";
 import hexToRgba from "../../../../utils/hexToRbg";
+import { useStatesContext } from "../../../../context/StatesProvider";
+import { colors } from "../../../../utils/constants";
 
 type Props = {
   title: string;
@@ -19,6 +21,8 @@ const TimelineSectionMobile = ({
   icon,
   children,
 }: Props) => {
+  const { isDarkMode } = useStatesContext();
+
   return (
     <div className="relative flex flex-col items-center w-full h-full mb-100">
       {/* Title */}
@@ -114,9 +118,9 @@ const TimelineSectionMobile = ({
       <div
         className="absolute -bottom-0 left-0 w-full h-[80px] z-[2] "
         style={{
-          background:
-            "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 75.5%)",
-          // backgroundColor: "red",
+          background: `linear-gradient(180deg, rgba(${
+            isDarkMode ? "26, 26, 26" : "255, 255, 255"
+          }, 0.00) 0%, ${isDarkMode ? colors.black : colors.white} 75.5%)`,
         }}
       ></div>
     </div>

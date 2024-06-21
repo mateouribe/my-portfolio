@@ -1,4 +1,5 @@
 import prueba from "../../../assets/images/prueba.png";
+import { useStatesContext } from "../../../context/StatesProvider";
 import hexToRgba from "../../../utils/hexToRbg";
 import Button from "../../customElements/button";
 
@@ -21,6 +22,8 @@ const Item = ({
   img,
   hasButton = false,
 }: Props) => {
+  const { isDarkMode } = useStatesContext();
+
   return (
     <div
       className={`w-auto h-[50vh] max-w-[600px] relative flex flex-col  ${className} ${
@@ -28,20 +31,34 @@ const Item = ({
       }`}
     >
       <div
-        className={`timeline-item-square absolute -left-[5px] w-20 h-20 rounded-[4px] bg-white border border-lightOrange z-[3] ${
+        className={`timeline-item-square absolute -left-[5px] w-20 h-20 rounded-[4px]  border border-lightOrange z-[3] ${
           isTop ? "-bottom-[10px]" : "-top-[10px]"
-        }`}
+        } ${isDarkMode ? "bg-black" : "bg-white"}`}
         style={{ borderColor: hexToRgba(color, 0.65) }}
       ></div>
-      <div className="flex flex-row w-full bg-white justify-between items-center mb-10 relative z-[1]">
-        <h4 className="font-medium tracking-tight text-[18px]">{title}</h4>
+      <div
+        className={`flex flex-row w-full justify-between items-center mb-10 relative z-[1] ${
+          isDarkMode ? "bg-black" : "bg-white"
+        }`}
+      >
+        <h4
+          className={`font-medium tracking-tight text-[18px] ${
+            isDarkMode ? "text-white" : "text-black"
+          }`}
+        >
+          {title}
+        </h4>
         {hasButton && (
           <Button backgroundColor="white" isSmall>
             visit study case
           </Button>
         )}
       </div>
-      <p className="tracking-tight text-[14px] text-dimGray bg-white relative z-[1]">
+      <p
+        className={`tracking-tight text-[14px] text-dimGray relative z-[1] ${
+          isDarkMode ? "bg-black" : "bg-white"
+        }`}
+      >
         {description}
       </p>
       <img

@@ -1,11 +1,18 @@
+import { useStatesContext } from "../../context/StatesProvider";
 import Icon from "./icon";
 import Marquee from "react-fast-marquee";
 
 const Skills = () => {
+  const { isDarkMode } = useStatesContext();
+
   return (
-    <section className="mx-auto py-desktop max-w-screen-2xl">
+    <section className="mx-auto py-desktop max-w-screen-2xl background-color-will-change">
       <div className="w-full max-w-screen-xl mb-20 padding-section-x">
-        <h2 className="tracking-tight text-16 md:text-18 lg:text-20">
+        <h2
+          className={`tracking-tight text-16 md:text-18 lg:text-20 ${
+            isDarkMode ? "text-white" : "text-black"
+          }`}
+        >
           My Skillset
         </h2>
       </div>

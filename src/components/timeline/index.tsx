@@ -51,7 +51,8 @@ const Timeline = () => {
           selector: string,
           animationType: "to" | "fromTo",
           animationConfig: gsap.TweenVars,
-          fromVars?: gsap.TweenVars
+          fromVars?: gsap.TweenVars,
+          reverse?: boolean
         ) => {
           gsap.utils.toArray(selector).forEach((el) => {
             const element = el as HTMLElement;
@@ -60,7 +61,9 @@ const Timeline = () => {
                 trigger: element,
                 start: "left 90%",
                 containerAnimation: scrollTween,
-                toggleActions: "play reverse play reverse",
+                toggleActions: reverse
+                  ? "play reverse play reverse"
+                  : "play reset play reset",
               },
             });
 
@@ -72,12 +75,18 @@ const Timeline = () => {
           });
         };
 
-        createScrollTriggerAnimation(".square-to-animate", "to", {
-          scale: 1.3,
-          opacity: 0,
-          duration: 2,
-          ease: "circ.out",
-        });
+        createScrollTriggerAnimation(
+          ".square-to-animate",
+          "to",
+          {
+            scale: 1.3,
+            opacity: 0,
+            duration: 2,
+            ease: "circ.out",
+          },
+          undefined,
+          false
+        );
 
         createScrollTriggerAnimation(
           ".timeline-item-square",
@@ -89,7 +98,8 @@ const Timeline = () => {
           },
           {
             scale: 0,
-          }
+          },
+          true
         );
       }, [container.current, triggerRef.current]);
 
@@ -121,7 +131,7 @@ const Timeline = () => {
               trigger: element,
               start: "top 50%",
               end: "bottom 50%",
-              toggleActions: "play reverse play reverse",
+              toggleActions: "play reset play reset",
             },
           });
 
@@ -288,8 +298,6 @@ const Timeline = () => {
               img={edutrack}
             />
           </TimelineSection>
-
-          <div className="w-[100vw] h-view bg-white"></div>
         </div>
 
         {/* Mobile */}

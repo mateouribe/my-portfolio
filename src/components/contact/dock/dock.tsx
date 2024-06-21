@@ -11,7 +11,7 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
 }
 
 const dockVariants = cva(
-  "w-max mt-8 h-[100px] p-3 flex items-end gap-3 rounded-2xl border dark:border-[#707070]"
+  "w-max mt-8 h-[80] lg:h-[100px] p-3 flex items-end gap-3 rounded-2xl border dark:border-[#707070]"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -23,10 +23,10 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     useEffect(() => {
       const handleResize = () => {
         if (window.innerWidth < 1180) {
-          setDynamicMagnification(80); // 40px smaller than the original 120
+          setDynamicMagnification(70); // 40px smaller than the original 120
           setDynamicDistance(160); // 40px smaller than the original 200
         } else {
-          setDynamicMagnification(120);
+          setDynamicMagnification(110);
           setDynamicDistance(200);
         }
       };
@@ -89,6 +89,22 @@ const DockIcon = ({
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1180) {
+        setIsDesktop(false);
+      } else {
+        setIsDesktop(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial values
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const distanceCalc = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -99,7 +115,7 @@ const DockIcon = ({
   const widthSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [70, magnification, 70]
+    [isDesktop ? 70 : 50, magnification, isDesktop ? 70 : 50]
   );
 
   const width = useSpring(widthSync, {

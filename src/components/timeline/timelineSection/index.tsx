@@ -1,6 +1,7 @@
 import React from "react";
 import TimelineTitle from "../timelineTitle";
 import hexToRgba from "../../../utils/hexToRbg";
+import { useStatesContext } from "../../../context/StatesProvider";
 
 type Props = {
   children: React.ReactNode;
@@ -23,9 +24,11 @@ const TimelineSection = ({
   isLastSection = false,
   icon,
 }: Props) => {
+  const { isDarkMode } = useStatesContext();
+
   return (
     <section
-      className={`relative flex flex-row items-center w-auto bg-white pr-[90px] h-view ${className}`}
+      className={`relative flex flex-row items-center w-auto pr-[90px] h-view ${className}`}
     >
       <div
         className="absolute w-full h-[1px] top-1/2 transform -translate-y-1/2 z-[1]"
@@ -33,6 +36,7 @@ const TimelineSection = ({
           backgroundColor: hexToRgba(color, 0.65),
         }}
       ></div>
+
       <TimelineTitle
         title={title}
         color={color}
@@ -104,6 +108,7 @@ const TimelineSection = ({
           </svg>
         )}
       </TimelineTitle>
+
       <div className="h-full grid grid-flow-col auto-cols-max ml-[150px]">
         {children}
       </div>
@@ -111,8 +116,11 @@ const TimelineSection = ({
         <div
           className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[250px] h-[200px] z-[2]"
           style={{
-            background:
-              "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))",
+            background: `linear-gradient(to right, ${
+              isDarkMode
+                ? "rgba(26, 26, 26, 0), rgba(26, 26, 26, 1)"
+                : "rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)"
+            })`,
           }}
         ></div>
       )}

@@ -5,12 +5,15 @@ import { Dock, DockIcon } from "./dock/dock";
 import contactImage from "../../assets/images/contact-image.png";
 import contactImage2 from "../../assets/images/contact-image2.png";
 import useIsDesktop from "../../utils/useIsDesktop";
+import { useStatesContext } from "../../context/StatesProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Contact = () => {
+  const { isDarkMode } = useStatesContext();
+
   const container = useRef<HTMLDivElement>(null);
 
   const isDesktop = useIsDesktop();
@@ -168,16 +171,24 @@ const Contact = () => {
 
   return (
     <section
-      className="flex flex-col w-full bg-white gap-50 lg:gap-20 lg:flex-row p-mobile py-tablet"
+      className="flex flex-col w-full gap-50 lg:gap-20 lg:flex-row p-mobile py-tablet background-color-will-change"
       ref={container}
       id="contact"
     >
-      <div className="w-full lg:w-[70%] min-h-[50vh] bg-[#F5F5F5] shadow-sm rounded-30 flex flex-col px-50 justify-center items-start relative overflow-hidden">
-        <h3 className="mb-20 font-semibold leading-tight tracking-tight text-center lg:text-left text-32 lg:text-37">
-          Connect with me using {isDesktop && <br />}
+      <div
+        className={`w-full lg:w-[70%] min-h-[50vh] shadow-sm rounded-30 flex flex-col px-20 lg:px-50 justify-center items-center lg:items-start relative overflow-hidden ${
+          isDarkMode ? "bg-[#2A2A2A]" : "bg-[#F5F5F5]"
+        }`}
+      >
+        <h3
+          className={`mb-20 font-semibold leading-tight tracking-tight text-center lg:text-left text-25 lg:text-37 ${
+            isDarkMode ? "text-white" : "text-black"
+          }`}
+        >
+          Connect with me using <br />
           any of these 👇
         </h3>
-        <Dock className="border-[#DFDFDF] px-20 self-start bg-white/20 rounded-30 z-[2] relative">
+        <Dock className="border-[#DFDFDF] px-20 lg:self-start /20 rounded-30 z-[2] relative">
           <DockIcon
             className="shadow-sm"
             href="https://www.linkedin.com/in/mateo-arismendy-uribe/"
@@ -203,8 +214,12 @@ const Contact = () => {
           src={contactImage2}
         />
       </div>
-      <div className="w-full lg:w-[30%] min-h-[50vh] bg-[#FFEAD6] shadow-sm rounded-30 flex flex-col items-start justify-end p-20 relative">
-        <h4 className="font-medium leading-tight tracking-tight text-left text-28 text-[#FF4B00]">
+      <div
+        className={`w-full lg:w-[30%] min-h-[50vh]  shadow-sm rounded-30 flex flex-col items-start justify-end p-20 relative ${
+          isDarkMode ? "bg-[#372118]" : "bg-[#FFEAD6]"
+        }`}
+      >
+        <h4 className="font-medium leading-tight tracking-tight text-left text-20 lg:text-28 text-[#FF4B00]">
           I'm <br />
           Open to Work
         </h4>

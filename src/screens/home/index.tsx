@@ -5,18 +5,49 @@ import Timeline from "../../components/timeline";
 import Skills from "../../components/skills";
 import hero1 from "../../assets/images/hero1.mp4";
 import Contact from "../../components/contact";
+import { useStatesContext } from "../../context/StatesProvider";
+import { useLayoutEffect, useRef } from "react";
+import { colors } from "../../utils/constants";
+import gsap from "gsap";
 
 const Home = () => {
+  const { isDarkMode } = useStatesContext();
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".background-color-will-change", {
+        backgroundColor: isDarkMode ? colors.black : colors.white,
+        duration: 0,
+      });
+      gsap.to(".text-color-will-change", {
+        color: isDarkMode ? colors.white : colors.black,
+        duration: 0,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [isDarkMode]);
+
   return (
-    <>
+    <section
+      ref={sectionRef}
+      className={`${isDarkMode ? "bg-black" : "bg-white"}`}
+    >
       {/* Hero */}
-      <section id="index">
+      <section id="index" className="">
         <Wrapper className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
           <div>
             <h1 className="text-title mb-30">
-              <span>Hey, this is Mateo Arismendy</span>
+              <span className={`${isDarkMode ? "text-white" : "text-black"}`}>
+                Hey, this is Mateo Arismendy
+              </span>
               <br />
-              <span className="pr-8">I am a</span>
+              <span
+                className={`pr-8 ${isDarkMode ? "text-white" : "text-black"}`}
+              >
+                I am a
+              </span>
               <HighlightText color="#FF4C00">
                 <svg
                   width="28"
@@ -122,10 +153,11 @@ const Home = () => {
           </p>
         </Wrapper>
       </section>
+
       <Skills />
       <Timeline />
       <Contact />
-    </>
+    </section>
   );
 };
 
