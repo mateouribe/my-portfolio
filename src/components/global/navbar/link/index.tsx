@@ -2,16 +2,14 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { navigateToPage } from "../../../../utils/navigateToPage";
 import Home from "../icons/home";
-import Technologies from "../icons/technologies";
-import Education from "../icons/education";
-import Projects from "../icons/projects";
 import Contact from "../icons/contact";
+import Timeline from "../icons/timeline";
 
 type Props = {
   children: React.ReactNode;
   onClick?: () => void;
   route: string;
-  icon: "home" | "technologies" | "education" | "projects" | "contact";
+  icon: "home" | "timeline" | "contact";
 };
 
 const Link = ({ children, onClick, route, icon }: Props) => {
@@ -27,14 +25,10 @@ const Link = ({ children, onClick, route, icon }: Props) => {
     >
       {icon === "home" ? (
         <Home />
-      ) : icon === "technologies" ? (
-        <Technologies />
-      ) : icon === "education" ? (
-        <Education />
-      ) : icon === "projects" ? (
-        <Projects />
       ) : icon === "contact" ? (
         <Contact />
+      ) : icon === "timeline" ? (
+        <Timeline />
       ) : null}
       {children}
     </li>

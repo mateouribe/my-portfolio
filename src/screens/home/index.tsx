@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <section>
+      <section id="index">
         <Wrapper className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
           <div>
             <h1 className="text-title mb-30">

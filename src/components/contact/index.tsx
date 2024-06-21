@@ -170,6 +170,7 @@ const Contact = () => {
     <section
       className="flex flex-col w-full bg-white gap-50 lg:gap-20 lg:flex-row p-mobile py-tablet"
       ref={container}
+      id="contact"
     >
       <div className="w-full lg:w-[70%] min-h-[50vh] bg-[#F5F5F5] shadow-sm rounded-30 flex flex-col px-50 justify-center items-start relative overflow-hidden">
         <h3 className="mb-20 font-semibold leading-tight tracking-tight text-center lg:text-left text-32 lg:text-37">

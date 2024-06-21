@@ -175,7 +175,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <section ref={triggerRef} className="overflow-hidden">
+    <section ref={triggerRef} className="overflow-hidden" id="timeline">
       {/* Desktop */}
       <div
         className="w-auto h-view lg:flex flex-row hidden design-bg-trigger pl-[200px]"
