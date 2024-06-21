@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { colors } from "../../utils/constants";
 import Item from "./item";
+import ItemMobile from "./item/itemMobile";
 import TimelineSection from "./timelineSection";
 import TimelineSectionMobile from "./timelineSection/timelineSectionMobile";
 import onlineLearing from "../../assets/images/online-learning.png";
@@ -12,7 +13,9 @@ import pagoTiendaTimeline from "../../assets/images/pago-tienda-timeline.png";
 import amazingPetGroomingTimeline from "../../assets/images/amazing-pet-grooming-timeline.png";
 import colegioNormalTimeline from "../../assets/images/colegio-normal-timeline.png";
 import softwareTestingTimeline from "../../assets/images/software-testing-timeline.png";
-import ItemMobile from "./item/itemMobile";
+import flappyBird from "../../assets/images/flappy-bird.png";
+import linque from "../../assets/images/linque.png";
+import edutrack from "../../assets/images/edutrack.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -262,23 +265,26 @@ const Timeline = () => {
           isLastSection
         >
           <Item
-            title="4. Computer System Technician Diploma"
-            description="My passion for coding began early, and to nurture this interest, I dove into various online courses on platforms like Platzi, Udemy, and Coursera. These courses provided me with a strong foundation in front-end development, covering essential skills and modern technologies."
+            title="Linque - Mobile App"
+            description="My team and I developed a mobile app for the Waterloo Catholic School Board to address the challenge employees faced with using multiple, confusing apps. We streamlined functionality by implementing a calendar for event management, group and private chat, and PDF management. The app was built using React Native for development, Firebase for backend services, and Figma for UI/UX design."
             className="self-end col-span-2 row-start-2 row-end-3"
             color={colors.darkPurple}
+            img={linque}
           />
           <Item
-            title="5. Online Learning Platforms"
-            description="My passion for coding began early, and to nurture this interest, I dove into various online courses on platforms like Platzi, Udemy, and Coursera. These courses provided me with a strong foundation in front-end development, covering essential skills and modern technologies."
+            title="Flappy Bird - Game"
+            description="My team and I developed a Flappy Bird game using C# and Windows Forms. We focused on game mechanics, collision detection, and an engaging user interface, showcasing our skills in C# programming and Windows Forms development."
             className="self-start col-span-1 row-start-1 row-end-2 ml-[500px]"
             color={colors.darkPurple}
+            img={flappyBird}
             isTop
           />
           <Item
-            title="6. Online Learning Platfosssms"
-            description="My passion for coding began early, and to nurture this interest, I dove into various online courses on platforms like Platzi, Udemy, and Coursera. These courses provided me with a strong foundation in front-end development, covering essential skills and modern technologies."
+            title="EduTrack - Mobile App"
+            description="My team and I developed EduTrack, a mobile app for streamlining school administration and enhancing education. It manages academic records and improves communication using WebSQL for the backend and HTML, CSS, JavaScript, and jQuery Mobile for the frontend."
             className="self-end col-span-2 row-start-2 row-end-3"
             color={colors.darkPurple}
+            img={edutrack}
           />
         </TimelineSection>
 
@@ -362,19 +368,22 @@ const Timeline = () => {
           icon="projects"
         >
           <ItemMobile
-            title="4. Computer System Technician Diploma"
-            description="My passion for coding began early, and to nurture this interest, I dove into various online courses on platforms like Platzi, Udemy, and Coursera. These courses provided me with a strong foundation in front-end development, covering essential skills and modern technologies."
+            title="Linque - Mobile App"
+            description="My team and I developed a mobile app for the Waterloo Catholic School Board to address the challenge employees faced with using multiple, confusing apps. We streamlined functionality by implementing a calendar for event management, group and private chat, and PDF management. The app was built using React Native for development, Firebase for backend services, and Figma for UI/UX design."
             color={colors.darkPurple}
+            img={linque}
           />
           <ItemMobile
-            title="5. Online Learning Platforms"
-            description="My passion for coding began early, and to nurture this interest, I dove into various online courses on platforms like Platzi, Udemy, and Coursera. These courses provided me with a strong foundation in front-end development, covering essential skills and modern technologies."
+            title="Flappy Bird - Game"
+            description="My team and I developed a Flappy Bird game using C# and Windows Forms. We focused on game mechanics, collision detection, and an engaging user interface, showcasing our skills in C# programming and Windows Forms development."
             color={colors.darkPurple}
+            img={flappyBird}
           />
           <ItemMobile
-            title="6. Online Learning Platfosssms"
-            description="My passion for coding began early, and to nurture this interest, I dove into various online courses on platforms like Platzi, Udemy, and Coursera. These courses provided me with a strong foundation in front-end development, covering essential skills and modern technologies."
+            title="EduTrack - Mobile App"
+            description="My team and I developed EduTrack, a mobile app for streamlining school administration and enhancing education. It manages academic records and improves communication using WebSQL for the backend and HTML, CSS, JavaScript, and jQuery Mobile for the frontend."
             color={colors.darkPurple}
+            img={edutrack}
           />
         </TimelineSectionMobile>
       </div>
