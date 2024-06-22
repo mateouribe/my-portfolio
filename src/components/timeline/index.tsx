@@ -16,10 +16,12 @@ import softwareTestingTimeline from "../../assets/images/software-testing-timeli
 import flappyBird from "../../assets/images/flappy-bird.png";
 import linque from "../../assets/images/linque.png";
 import edutrack from "../../assets/images/edutrack.png";
+import { useStatesContext } from "../../context/StatesProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Timeline = () => {
+  const { isDarkMode } = useStatesContext();
   const container = useRef<HTMLDivElement>(null);
   const containerMobile = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -194,10 +196,14 @@ const Timeline = () => {
         >
           <TimelineSection
             color={colors.darkOrange}
-            lightColor={colors.veryLightOrange}
-            veryLightColor={colors.almostWhiteOrange}
-            title="Experience"
-            icon="experience"
+            lightColor={
+              !isDarkMode ? colors.veryLightOrange : colors.veryDarkOrange
+            }
+            veryLightColor={
+              !isDarkMode ? colors.almostWhiteOrange : colors.almostBlackOrange
+            }
+            title="Education"
+            icon="education"
           >
             <Item
               title="1. Discovering the World of Programming"
@@ -225,8 +231,12 @@ const Timeline = () => {
 
           <TimelineSection
             color={colors.darkBlue}
-            lightColor={colors.veryLightBlue}
-            veryLightColor={colors.almostWhiteBlue}
+            lightColor={
+              !isDarkMode ? colors.veryLightBlue : colors.veryDarkBlue
+            }
+            veryLightColor={
+              !isDarkMode ? colors.almostWhiteBlue : colors.almostBlackBlue
+            }
             title="Experience"
             icon="experience"
           >
@@ -268,8 +278,12 @@ const Timeline = () => {
 
           <TimelineSection
             color={colors.darkPurple}
-            lightColor={colors.veryLightPurple}
-            veryLightColor={colors.almostWhitePurple}
+            lightColor={
+              !isDarkMode ? colors.veryLightPurple : colors.veryDarkPurple
+            }
+            veryLightColor={
+              !isDarkMode ? colors.almostWhitePurple : colors.almostBlackPurple
+            }
             className="pr-[200px]"
             title="School Projects"
             icon="projects"
@@ -307,8 +321,12 @@ const Timeline = () => {
         >
           <TimelineSectionMobile
             color={colors.darkOrange}
-            lightColor={colors.veryLightOrange}
-            veryLightColor={colors.almostWhiteOrange}
+            lightColor={
+              !isDarkMode ? colors.veryLightOrange : colors.veryDarkOrange
+            }
+            veryLightColor={
+              !isDarkMode ? colors.almostWhiteOrange : colors.almostBlackOrange
+            }
             title="Experience"
             icon="experience"
           >
@@ -334,8 +352,12 @@ const Timeline = () => {
 
           <TimelineSectionMobile
             color={colors.darkBlue}
-            lightColor={colors.veryLightBlue}
-            veryLightColor={colors.almostWhiteBlue}
+            lightColor={
+              !isDarkMode ? colors.veryLightBlue : colors.veryDarkBlue
+            }
+            veryLightColor={
+              !isDarkMode ? colors.almostWhiteBlue : colors.almostBlackBlue
+            }
             title="Experience"
             icon="experience"
           >
@@ -371,8 +393,12 @@ const Timeline = () => {
 
           <TimelineSectionMobile
             color={colors.darkPurple}
-            lightColor={colors.veryLightPurple}
-            veryLightColor={colors.almostWhitePurple}
+            lightColor={
+              !isDarkMode ? colors.veryLightPurple : colors.veryDarkPurple
+            }
+            veryLightColor={
+              !isDarkMode ? colors.almostWhitePurple : colors.almostBlackPurple
+            }
             title="School Projects"
             icon="projects"
           >

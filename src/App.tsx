@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/home";
 import Navbar from "./components/global/navbar";
-import ScrollToAnchor from "./utils/scrollToAnchor";
+import ScrollToAnchor from "./utils/ScrollToAnchor";
 
 function App() {
   const location = useLocation();
