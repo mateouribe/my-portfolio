@@ -3,6 +3,7 @@ import Home from "./screens/home";
 import Navbar from "./components/global/navbar";
 import ScrollToAnchor from "./utils/ScrollToAnchor";
 import Layout from "./utils/Layout";
+import NotFound from "./screens/notFound";
 
 function App() {
   const location = useLocation();
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </>

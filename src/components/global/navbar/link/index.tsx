@@ -51,7 +51,11 @@ const Link = ({ children, onClick, route, icon }: Props) => {
         timeline?.current?.reverse();
       }}
     >
-      <div className="flex items-center gap-1 tracking-tight text-black link-to-animate text-14">
+      <div
+        className={`flex items-center gap-1 tracking-tight link-to-animate text-14 ${
+          isDarkMode ? "text-white" : "text-black "
+        }`}
+      >
         {icon === "home" ? (
           <Home fill={isDarkMode ? colors.white : colors.black} />
         ) : icon === "contact" ? (

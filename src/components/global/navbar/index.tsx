@@ -14,7 +14,9 @@ const Navbar = () => {
 
   return (
     <header
-      className="sticky top-0 left-0 z-[999] border-gainsboro border-b-[0.5px] shadow-sm py-[20px] bg-white background-color-will-change"
+      className={`sticky top-0 left-0 z-[999] border-gainsboro border-b-[0.5px] shadow-sm py-[20px] ${
+        isDarkMode ? "bg-black" : " bg-white"
+      }`}
       ref={sectionRef}
     >
       <nav className="flex flex-row items-center self-end justify-center lg:justify-end px-20 lg:px-[60px]">
