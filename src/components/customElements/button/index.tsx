@@ -36,7 +36,7 @@ const Button = ({
     }, container);
 
     return () => ctx.revert();
-  }, [container]);
+  }, [container, isSmall]);
 
   return (
     <div

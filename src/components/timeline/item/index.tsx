@@ -41,7 +41,7 @@ const Item = ({
         style={{ borderColor: hexToRgba(color, 0.65) }}
       ></div>
       <div
-        className={`flex flex-row w-full justify-between items-center mb-10 relative z-[1] ${
+        className={`flex flex-row w-full justify-between items-center mb-10 relative z-[3] ${
           isDarkMode ? "bg-black" : "bg-white"
         }`}
       >
@@ -59,7 +59,7 @@ const Item = ({
         )}
       </div>
       <p
-        className={`tracking-tight text-[14px] text-dimGray relative z-[1] ${
+        className={`tracking-tight text-[14px] text-dimGray relative z-[3] ${
           isDarkMode ? "bg-black" : "bg-white"
         }`}
       >

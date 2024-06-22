@@ -114,7 +114,7 @@ const TimelineSection = ({
       </div>
       {isLastSection && (
         <div
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[250px] h-[200px] z-[2]"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[250px] h-[200px] z-[1]"
           style={{
             background: `linear-gradient(to right, ${
               isDarkMode

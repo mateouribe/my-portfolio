@@ -251,7 +251,7 @@ const Timeline = () => {
               // buttonText="visit study case"
             />
             <Item
-              title="Software Testing Bureau - Bogotá, Colombia"
+              title="Wordpress Developer - Bogotá, Colombia"
               description="I developed and customized WordPress websites for Software Testing Bureau, ensuring responsive design and optimal user experience. My role included regular updates, maintenance for security, and implementing SEO best practices to enhance visibility and discoverability."
               className="self-start col-span-1 row-start-1 row-end-2 ml-[500px]"
               color={colors.darkBlue}
@@ -379,28 +379,24 @@ const Timeline = () => {
               description="I developed a responsive e-commerce web application for Pago Linea, using React JS, Redux, Figma, and Tailwind CSS. The project focused on secure payment integration and creating a user-friendly experience, ensuring scalability and optimal performance across various devices."
               color={colors.darkBlue}
               img={pagoTiendaTimeline}
-              hasButton
             />
             <ItemMobile
-              title="Software Testing Bureau - Bogotá, Colombia"
+              title="Wordpress Developer - Bogotá, Colombia"
               description="I developed and customized WordPress websites for Software Testing Bureau, ensuring responsive design and optimal user experience. My role included regular updates, maintenance for security, and implementing SEO best practices to enhance visibility and discoverability."
               color={colors.darkBlue}
               img={softwareTestingTimeline}
-              hasButton
             />
             <ItemMobile
               title="Amazing Pet Grooming - Cambridge, Ontario"
               description="I led the UI/UX redesign and development of Amazing Pet Grooming's website, using React JS, GSAP, Figma, and Tailwind CSS. The project modernized the site's look and improved user experience, ensuring responsive performance across devices."
               img={amazingPetGroomingTimeline}
               color={colors.darkBlue}
-              hasButton
             />
             <ItemMobile
               title="Colegio Normal Superior de Pitalito"
               description="I developed a mobile app for Colegio Normal Superior de Pitalito, using Figma for UI/UX design and React Native with Expo for development. Collaborated with school administration, employed Agile methodologies, and integrated Firebase for backend services."
               img={colegioNormalTimeline}
               color={colors.darkBlue}
-              hasButton
             />
           </TimelineSectionMobile>
 

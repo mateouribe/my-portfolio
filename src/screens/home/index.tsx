@@ -157,8 +157,7 @@ const Home = () => {
             a Computer Programming diploma from Conestoga College in Canada, I
             bring creativity, technical expertise, and a user-focused approach
             to every project.
-            <a className="cursor-pointer text-darkOrange">
-              {" "}
+            <a className="cursor-pointer text-darkOrange" href="/#contact">
               Let's connect and create something amazing together!
             </a>
           </p>
