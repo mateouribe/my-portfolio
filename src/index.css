@@ -71,3 +71,18 @@
     font-style: normal;
   }
 }
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* For Internet Explorer and Edge */
+body {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
