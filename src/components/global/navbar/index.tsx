@@ -33,7 +33,7 @@ const Navbar = () => {
       className="sticky top-0 left-0 z-[999] border-gainsboro border-b-[0.5px] shadow-sm py-[20px] bg-white background-color-will-change"
       ref={sectionRef}
     >
-      <nav className="flex flex-row items-center self-end justify-end  px-[60px]">
+      <nav className="flex flex-row items-center self-end justify-center lg:justify-end px-20 lg:px-[60px]">
         <ul className="flex flex-row items-center gap-30">
           <div onClick={toggleDarkMode} className="cursor-pointer">
             <Light fill={isDarkMode ? colors.white : colors.black} />

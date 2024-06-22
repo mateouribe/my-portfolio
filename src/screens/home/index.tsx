@@ -68,8 +68,19 @@ const Home = () => {
             </h1>
 
             <div className="flex flex-col items-start gap-10 md:flex-row md:gap-30">
-              <Button>View my Resume</Button>
-              <Button backgroundColor="white">Visit LinkedIn Profile</Button>
+              <Button
+                onClick={() => {
+                  window.open(`./Mateo_Arismendy_Uribe_Resume.pdf`, "_blank");
+                }}
+              >
+                View my Resume
+              </Button>
+              <Button
+                backgroundColor="white"
+                href="https://www.linkedin.com/in/mateo-arismendy-uribe/"
+              >
+                Visit LinkedIn Profile
+              </Button>
             </div>
           </div>
           <div className="flex items-center justify-end">
