@@ -93,8 +93,8 @@ const Home = () => {
         </Wrapper>
 
         {/* Video */}
-        <div className="px-10 mb-10 w-full h-[70vh] relative">
-          <div className="w-[calc(100%-20px)] h-full absolute -bottom-[4%] left-1/2 transform -translate-x-1/2 rounded-12 z-[99] overflow-hidden shadow-sm">
+        <div className="px-20 mb-10 w-full h-[70vh] relative">
+          <div className="w-[calc(100%-40px)] h-full absolute -bottom-[4%] left-1/2 transform -translate-x-1/2 rounded-12 z-[99] overflow-hidden shadow-sm">
             <video
               className="object-cover w-full h-full"
               autoPlay={false}

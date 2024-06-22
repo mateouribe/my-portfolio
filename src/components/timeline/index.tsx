@@ -247,7 +247,8 @@ const Timeline = () => {
               color={colors.darkBlue}
               img={pagoTiendaTimeline}
               isTop
-              hasButton
+              // hasButton
+              // buttonText="visit study case"
             />
             <Item
               title="Software Testing Bureau - Bogotá, Colombia"
@@ -256,7 +257,8 @@ const Timeline = () => {
               color={colors.darkBlue}
               img={softwareTestingTimeline}
               isTop
-              hasButton
+              // hasButton
+              // buttonText="visit study case"
             />
             <Item
               title="Amazing Pet Grooming - Cambridge, Ontario"
@@ -264,7 +266,8 @@ const Timeline = () => {
               className="self-end col-span-2 row-start-2 row-end-3"
               img={amazingPetGroomingTimeline}
               color={colors.darkBlue}
-              hasButton
+              // hasButton
+              // buttonText="visit study case"
             />
             <Item
               title="Colegio Normal Superior de Pitalito"
@@ -272,7 +275,8 @@ const Timeline = () => {
               className="self-end col-span-2 row-start-2 row-end-3"
               img={colegioNormalTimeline}
               color={colors.darkBlue}
-              hasButton
+              // hasButton
+              // buttonText="visit study case"
             />
           </TimelineSection>
 
@@ -295,6 +299,9 @@ const Timeline = () => {
               className="self-end col-span-2 row-start-2 row-end-3"
               color={colors.darkPurple}
               img={linque}
+              hasButton
+              buttonText="visit repository"
+              buttonHref="https://github.com/AminMirabd/Linque"
             />
             <Item
               title="Flappy Bird - Game"
@@ -303,6 +310,9 @@ const Timeline = () => {
               color={colors.darkPurple}
               img={flappyBird}
               isTop
+              hasButton
+              buttonText="visit repository"
+              buttonHref="https://github.com/mateouribe/flappy-bird"
             />
             <Item
               title="EduTrack - Mobile App"
@@ -310,6 +320,9 @@ const Timeline = () => {
               className="self-end col-span-2 row-start-2 row-end-3"
               color={colors.darkPurple}
               img={edutrack}
+              hasButton
+              buttonText="visit repository"
+              buttonHref="https://github.com/mateouribe/edutrack"
             />
           </TimelineSection>
         </div>
@@ -407,18 +420,27 @@ const Timeline = () => {
               description="My team and I developed a mobile app for the Waterloo Catholic School Board to address the challenge employees faced with using multiple, confusing apps. We streamlined functionality by implementing a calendar for event management, group and private chat, and PDF management. The app was built using React Native for development, Firebase for backend services, and Figma for UI/UX design."
               color={colors.darkPurple}
               img={linque}
+              hasButton
+              buttonText="visit repository"
+              buttonHref="https://github.com/AminMirabd/Linque"
             />
             <ItemMobile
               title="Flappy Bird - Game"
               description="My team and I developed a Flappy Bird game using C# and Windows Forms. We focused on game mechanics, collision detection, and an engaging user interface, showcasing our skills in C# programming and Windows Forms development."
               color={colors.darkPurple}
               img={flappyBird}
+              hasButton
+              buttonText="visit repository"
+              buttonHref="https://github.com/mateouribe/flappy-bird"
             />
             <ItemMobile
               title="EduTrack - Mobile App"
               description="My team and I developed EduTrack, a mobile app for streamlining school administration and enhancing education. It manages academic records and improves communication using WebSQL for the backend and HTML, CSS, JavaScript, and jQuery Mobile for the frontend."
               color={colors.darkPurple}
               img={edutrack}
+              hasButton
+              buttonText="visit repository"
+              buttonHref="https://github.com/mateouribe/edutrack"
             />
           </TimelineSectionMobile>
         </div>

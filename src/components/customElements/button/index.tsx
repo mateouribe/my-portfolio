@@ -29,7 +29,7 @@ const Button = ({
       const tl = timeline.current;
 
       tl.to(".button-to-animate", {
-        y: -5,
+        y: isSmall ? -2.5 : -5,
         duration: 0.3,
         ease: "power2.inOut",
       });

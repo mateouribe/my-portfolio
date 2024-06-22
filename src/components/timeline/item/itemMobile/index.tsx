@@ -10,6 +10,8 @@ type Props = {
   color: string;
   img?: string;
   hasButton?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
 };
 
 const ItemMobile = ({
@@ -19,6 +21,8 @@ const ItemMobile = ({
   color,
   img,
   hasButton = false,
+  buttonText,
+  buttonHref,
 }: Props) => {
   const { isDarkMode } = useStatesContext();
 
@@ -47,8 +51,13 @@ const ItemMobile = ({
           </p>
 
           {hasButton && (
-            <Button backgroundColor="white" isSmall className="my-20">
-              visit study case
+            <Button
+              backgroundColor="white"
+              isSmall
+              className="my-20"
+              href={buttonHref}
+            >
+              {buttonText}
             </Button>
           )}
 

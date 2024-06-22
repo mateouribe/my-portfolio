@@ -11,6 +11,8 @@ type Props = {
   color: string;
   img?: string;
   hasButton?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
 };
 
 const Item = ({
@@ -21,6 +23,8 @@ const Item = ({
   color,
   img,
   hasButton = false,
+  buttonText,
+  buttonHref,
 }: Props) => {
   const { isDarkMode } = useStatesContext();
 
@@ -49,8 +53,8 @@ const Item = ({
           {title}
         </h4>
         {hasButton && (
-          <Button backgroundColor="white" isSmall>
-            visit study case
+          <Button backgroundColor="white" isSmall href={buttonHref}>
+            {buttonText}
           </Button>
         )}
       </div>
