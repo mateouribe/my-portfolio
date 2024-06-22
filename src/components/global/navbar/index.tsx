@@ -1,28 +1,12 @@
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { useStatesContext } from "../../../context/StatesProvider";
 import Link from "./link";
 import { colors } from "../../../utils/constants";
-import gsap from "gsap";
 import Light from "./icons/light";
 
 const Navbar = () => {
   const { isDarkMode, setIsDarkMode } = useStatesContext();
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(sectionRef.current, {
-        backgroundColor: isDarkMode ? colors.black : colors.white,
-        duration: 0,
-      });
-      gsap.to(".text-color-will-change", {
-        color: isDarkMode ? colors.white : colors.black,
-        duration: 0,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [isDarkMode]);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -35,9 +19,9 @@ const Navbar = () => {
     >
       <nav className="flex flex-row items-center self-end justify-center lg:justify-end px-20 lg:px-[60px]">
         <ul className="flex flex-row items-center gap-30">
-          <div onClick={toggleDarkMode} className="cursor-pointer">
+          <li onClick={toggleDarkMode} className="cursor-pointer">
             <Light fill={isDarkMode ? colors.white : colors.black} />
-          </div>
+          </li>
           <Link route="/#index" icon="home">
             Home
           </Link>

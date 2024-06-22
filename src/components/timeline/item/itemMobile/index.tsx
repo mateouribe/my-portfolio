@@ -1,6 +1,6 @@
 import hexToRgba from "../../../../utils/hexToRbg";
 import Button from "../../../customElements/button";
-import prueba from "../../../../assets/images/prueba.png";
+import prueba from "../../../../assets/images/prueba.webp";
 import { useStatesContext } from "../../../../context/StatesProvider";
 
 type Props = {
@@ -64,6 +64,7 @@ const ItemMobile = ({
           <img
             src={img !== undefined ? img : prueba}
             className="w-full max-h-[300px] object-cover mt-10"
+            alt={`Image representation of ${title}`}
           />
         </div>
       </div>

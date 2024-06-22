@@ -77,6 +77,7 @@ export interface DockIconProps {
   children?: React.ReactNode;
   props?: PropsWithChildren;
   href?: string;
+  ariaLabel: string;
 }
 
 const DockIcon = ({
@@ -86,6 +87,7 @@ const DockIcon = ({
   className,
   children,
   href,
+  ariaLabel,
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -125,7 +127,12 @@ const DockIcon = ({
   });
 
   return (
-    <a href={href} target="_blank" className="cursor-alias">
+    <a
+      href={href}
+      target="_blank"
+      className="cursor-alias"
+      aria-label={ariaLabel}
+    >
       <motion.div
         ref={ref}
         style={{

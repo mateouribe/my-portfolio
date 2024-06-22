@@ -6,34 +6,12 @@ import Skills from "../../components/skills";
 import hero1 from "../../assets/images/hero1.mp4";
 import Contact from "../../components/contact";
 import { useStatesContext } from "../../context/StatesProvider";
-import { useLayoutEffect, useRef } from "react";
-import { colors } from "../../utils/constants";
-import gsap from "gsap";
 
 const Home = () => {
   const { isDarkMode } = useStatesContext();
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(".background-color-will-change", {
-        backgroundColor: isDarkMode ? colors.black : colors.white,
-        duration: 0,
-      });
-      gsap.to(".text-color-will-change", {
-        color: isDarkMode ? colors.white : colors.black,
-        duration: 0,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [isDarkMode]);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`${isDarkMode ? "bg-black" : "bg-white"}`}
-    >
+    <section className={`${isDarkMode ? "bg-black" : "bg-white"}`}>
       {/* Hero */}
       <section id="index" className="">
         <Wrapper className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
@@ -68,11 +46,7 @@ const Home = () => {
             </h1>
 
             <div className="flex flex-col items-start gap-10 md:flex-row md:gap-30">
-              <Button
-                onClick={() => {
-                  window.open(`./Mateo_Arismendy_Uribe_Resume.pdf`, "_blank");
-                }}
-              >
+              <Button href="https://mateoarismendy.com/Mateo_Arismendy_Uribe_Resume.pdf">
                 View my Resume
               </Button>
               <Button
@@ -97,7 +71,7 @@ const Home = () => {
           <div className="w-[calc(100%-40px)] h-full absolute -bottom-[4%] left-1/2 transform -translate-x-1/2 rounded-12 z-[99] overflow-hidden shadow-sm">
             <video
               className="object-cover w-full h-full"
-              autoPlay={false}
+              autoPlay
               loop
               muted
               src={hero1}
@@ -156,10 +130,8 @@ const Home = () => {
             With a Computer System Technician diploma from SENA in Colombia and
             a Computer Programming diploma from Conestoga College in Canada, I
             bring creativity, technical expertise, and a user-focused approach
-            to every project.
-            <a className="cursor-pointer text-darkOrange" href="/#contact">
-              Let's connect and create something amazing together!
-            </a>
+            to every project. Let's connect and create something amazing
+            together!
           </p>
         </Wrapper>
       </section>

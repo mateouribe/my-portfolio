@@ -1,4 +1,4 @@
-import prueba from "../../../assets/images/prueba.png";
+import prueba from "../../../assets/images/prueba.webp";
 import { useStatesContext } from "../../../context/StatesProvider";
 import hexToRgba from "../../../utils/hexToRbg";
 import Button from "../../customElements/button";
@@ -70,6 +70,8 @@ const Item = ({
         className={`absolute left-1/2 transform -translate-x-1/2 ${
           isTop ? "top-0" : "-bottom-10"
         }`}
+        loading="lazy"
+        alt={`Image representation of ${title}`}
       />
     </div>
   );

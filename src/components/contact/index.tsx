@@ -2,9 +2,8 @@ import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Dock, DockIcon } from "./dock/dock";
-import contactImage from "../../assets/images/contact-image.png";
-import contactImage2 from "../../assets/images/contact-image2.png";
-import useIsDesktop from "../../utils/useIsDesktop";
+import contactImage from "../../assets/images/contact-image.webp";
+import contactImage2 from "../../assets/images/contact-image2.webp";
 import { useStatesContext } from "../../context/StatesProvider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +15,6 @@ const Contact = () => {
 
   const container = useRef<HTMLDivElement>(null);
 
-  const isDesktop = useIsDesktop();
   const Icons = {
     gitHub: (props: IconProps) => (
       <svg viewBox="0 0 438.549 438.549" {...props}>
@@ -35,16 +33,16 @@ const Contact = () => {
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
-        <g clip-path="url(#clip0_132_10)">
+        <g clipPath="url(#clip0_132_10)">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M2.66667 24H21.3333C22.8061 24 24 22.8061 24 21.3333V2.66667C24 1.19391 22.8061 0 21.3333 0H2.66667C1.19391 0 0 1.19391 0 2.66667V21.3333C0 22.8061 1.19391 24 2.66667 24Z"
             fill="#007EBB"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M20.6668 20.6668H17.1054V14.6009C17.1054 12.9377 16.4734 12.0083 15.1571 12.0083C13.725 12.0083 12.9769 12.9755 12.9769 14.6009V20.6668H9.54461V9.11127H12.9769V10.6678C12.9769 10.6678 14.0088 8.75823 16.461 8.75823C18.9121 8.75823 20.6668 10.255 20.6668 13.3506V20.6668ZM5.44995 7.59817C4.28085 7.59817 3.3335 6.64338 3.3335 5.46583C3.3335 4.28828 4.28085 3.3335 5.44995 3.3335C6.61904 3.3335 7.56583 4.28828 7.56583 5.46583C7.56583 6.64338 6.61904 7.59817 5.44995 7.59817ZM3.67768 20.6668H7.25663V9.11127H3.67768V20.6668Z"
             fill="white"
           />
@@ -65,7 +63,7 @@ const Contact = () => {
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
-        <g clip-path="url(#clip0_132_26)">
+        <g clipPath="url(#clip0_132_26)">
           <path
             d="M18.7143 0H5.28571C2.3665 0 0 2.3665 0 5.28572V18.7143C0 21.6335 2.3665 24 5.28571 24H18.7143C21.6335 24 24 21.6335 24 18.7143V5.28572C24 2.3665 21.6335 0 18.7143 0Z"
             fill="url(#paint0_linear_132_26)"
@@ -84,8 +82,8 @@ const Contact = () => {
             y2="2.97851"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0CBD2A" />
-            <stop offset="1" stop-color="#5BF675" />
+            <stop stopColor="#0CBD2A" />
+            <stop offset="1" stopColor="#5BF675" />
           </linearGradient>
           <clipPath id="clip0_132_26">
             <rect width="24" height="24" fill="white" />
@@ -102,7 +100,7 @@ const Contact = () => {
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
-        <g clip-path="url(#clip0_132_14)">
+        <g clipPath="url(#clip0_132_14)">
           <path
             d="M1.63636 17.9999H5.45455V8.72714L0 4.63623V16.3635C0 17.269 0.733636 17.9999 1.63636 17.9999Z"
             fill="#4285F4"
@@ -191,6 +189,7 @@ const Contact = () => {
         <Dock className="border-[#DFDFDF] px-20 lg:self-start /20 rounded-30 z-[2] relative">
           <DockIcon
             className="shadow-sm"
+            ariaLabel="Contact Mateo thorugh LinkedIn"
             href="https://www.linkedin.com/in/mateo-arismendy-uribe/"
           >
             <Icons.linkedin className="w-30 h-30" />
@@ -198,20 +197,30 @@ const Contact = () => {
           <DockIcon
             className="shadow-sm"
             href="mailto:arismendyuribemateo@gmail.com"
+            ariaLabel="Contact Mateo thorugh Gmail"
           >
             <Icons.gmail className="w-30 h-30" />
           </DockIcon>
 
-          <DockIcon className="shadow-sm" href="https://github.com/mateouribe">
+          <DockIcon
+            className="shadow-sm"
+            href="https://github.com/mateouribe"
+            ariaLabel="Contact Mateo thorugh Github"
+          >
             <Icons.gitHub className="w-30 h-30" />
           </DockIcon>
-          <DockIcon className="shadow-sm" href="sms:+14375186019">
+          <DockIcon
+            className="shadow-sm"
+            href="sms:+14375186019"
+            ariaLabel="Contact Mateo thorugh iMessage"
+          >
             <Icons.iMessage className="w-30 h-30" />
           </DockIcon>
         </Dock>
         <img
           className="absolute bottom-[0%] lg:-bottom-[15%] left-[10%] w-[70%] lg:w-[50%] pointer-events-none z-[1] contact-image"
           src={contactImage2}
+          alt="Contact Image representing front-end contact methods"
         />
       </div>
       <div
@@ -226,6 +235,7 @@ const Contact = () => {
         <img
           className="absolute -top-[10%] -right-[3%] w-[80%] lg:w-full pointer-events-none contact-image"
           src={contactImage}
+          alt="Contact Image representing front-end open to work"
         />
       </div>
     </section>

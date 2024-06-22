@@ -18,7 +18,7 @@ type Props = {
 const Link = ({ children, onClick, route, icon }: Props) => {
   const { isDarkMode } = useStatesContext();
   const navigate = useNavigate();
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLLIElement>(null);
   const timeline = useRef<gsap.core.Timeline>();
 
   useLayoutEffect(() => {
@@ -37,7 +37,12 @@ const Link = ({ children, onClick, route, icon }: Props) => {
   }, [container]);
 
   return (
-    <div
+    <li
+      className="cursor-pointer"
+      onClick={() => {
+        onClick && onClick();
+        navigateToPage(navigate, route);
+      }}
       ref={container}
       onMouseEnter={() => {
         timeline?.current?.play();
@@ -46,13 +51,7 @@ const Link = ({ children, onClick, route, icon }: Props) => {
         timeline?.current?.reverse();
       }}
     >
-      <li
-        className="flex items-center gap-1 tracking-tight text-black cursor-pointer text-14 text-color-will-change link-to-animate"
-        onClick={() => {
-          onClick && onClick();
-          navigateToPage(navigate, route);
-        }}
-      >
+      <div className="flex items-center gap-1 tracking-tight text-black link-to-animate text-14">
         {icon === "home" ? (
           <Home fill={isDarkMode ? colors.white : colors.black} />
         ) : icon === "contact" ? (
@@ -61,8 +60,8 @@ const Link = ({ children, onClick, route, icon }: Props) => {
           <Timeline fill={isDarkMode ? colors.white : colors.black} />
         ) : null}
         {children}
-      </li>
-    </div>
+      </div>
+    </li>
   );
 };
 
