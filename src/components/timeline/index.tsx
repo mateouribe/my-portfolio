@@ -340,8 +340,8 @@ const Timeline = () => {
             veryLightColor={
               !isDarkMode ? colors.almostWhiteOrange : colors.almostBlackOrange
             }
-            title="Experience"
-            icon="experience"
+            title="Education"
+            icon="education"
           >
             <ItemMobile
               title="1. Discovering the World of Programming"
@@ -410,6 +410,7 @@ const Timeline = () => {
             }
             title="School Projects"
             icon="projects"
+            className="!mb-0"
           >
             <ItemMobile
               title="Linque - Mobile App"

@@ -169,7 +169,7 @@ const Contact = () => {
 
   return (
     <section
-      className="flex flex-col w-full gap-50 lg:gap-20 lg:flex-row p-mobile py-tablet background-color-will-change"
+      className="flex flex-col w-full gap-50 lg:gap-20 lg:flex-row p-mobile lg:py-tablet background-color-will-change"
       ref={container}
       id="contact"
     >

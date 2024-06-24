@@ -112,19 +112,19 @@ const Home = () => {
 
         <Wrapper maxScreen600 className="z-10 !py-desktop">
           <p className="text-white text-importantParagraph  relative z-[1] mb-30">
-            Hello! I'm a passionate Front-End Developer with a knack for
-            creating stunning and functional digital experiences. My journey
-            started with a love for games and computers, leading me to a career
-            in programming. Over the years, I've developed skills in WordPress,
+            I'm a passionate Front-End Developer with a knack for creating
+            stunning and functional digital experiences. My journey started with
+            a love for games and computers, leading me to a career in
+            programming. Over the years, I've developed skills in WordPress,
             React, and mobile app development, always focusing on user
             engagement.
           </p>
           <p className="text-white text-importantParagraph  relative z-[1] mb-30">
             I've worked on diverse projects, including crafting custom WordPress
-            themes for a company in Bogotá, redesigning interfaces with React JS
-            for Amazing Pet Grooming, and developing an educational app with
-            React Native and Firebase. My ability to align with business goals
-            and iterate based on feedback has been crucial to my success.
+            themes for a company in Bogotá, redesigning interfaces with React
+            JS, and developing an educational app with React Native and
+            Firebase. My ability to align with business goals and iterate based
+            on feedback has been crucial to my success.
           </p>
           <p className="text-white text-importantParagraph relative z-[1] ">
             With a Computer System Technician diploma from SENA in Colombia and

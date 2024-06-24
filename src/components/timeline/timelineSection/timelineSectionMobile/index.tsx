@@ -11,6 +11,7 @@ type Props = {
   veryLightColor: string;
   icon: "education" | "experience" | "projects";
   children: React.ReactNode;
+  className?: string;
 };
 
 const TimelineSectionMobile = ({
@@ -20,11 +21,14 @@ const TimelineSectionMobile = ({
   veryLightColor,
   icon,
   children,
+  className,
 }: Props) => {
   const { isDarkMode } = useStatesContext();
 
   return (
-    <div className="relative flex flex-col items-center w-full h-full mb-100">
+    <div
+      className={`relative flex flex-col items-center w-full h-full mb-100 ${className}`}
+    >
       {/* Title */}
       <TimelineTitle
         title={title}
