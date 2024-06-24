@@ -41,7 +41,7 @@ const Home = () => {
                     fill="#FF4C00"
                   />
                 </svg>
-                Front end Developer
+                Front-end Developer
               </HighlightText>
             </h1>
 
